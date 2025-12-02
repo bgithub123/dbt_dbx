@@ -1,12 +1,23 @@
-first_project:
+#dbt_dbx_iceberg_github:
+#  target: dev
+#  outputs:
+#    dev:
+#      type: spark
+#      method: token
+#      host: "{{ env_var('DATABRICKS_HOST') }}"
+#      http_path: "{{ env_var('DATABRICKS_HTTP_PATH') }}"
+#      token: "{{ env_var('DATABRICKS_TOKEN') }}"
+#      #catalog: hive_metastore         # optional
+#      schema: dbt_schema1              # change to your schem
+#      threads: 10
+dbt_dbx_iceberg_github:
   target: dev
   outputs:
     dev:
-      type: spark
-      method: token
+      type: databricks
+      catalog: dbt_catalog    # replace with the catalog name from SHOW CATALOGS
+      schema: dbt_schema1            # replace with a schema from SHOW SCHEMAS IN CATALOG my_uc_catalog
       host: "{{ env_var('DATABRICKS_HOST') }}"
       http_path: "{{ env_var('DATABRICKS_HTTP_PATH') }}"
       token: "{{ env_var('DATABRICKS_TOKEN') }}"
-      #catalog: hive_metastore         # optional
-      schema: dbt_schema1              # change to your schem
       threads: 10

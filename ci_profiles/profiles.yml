@@ -1,4 +1,4 @@
-first_project:           # must match profile in dbt_project.yml
+dbt_dbx_iceberg_github:           # must match profile in dbt_project.yml
   target: dev
   outputs:
     dev:
