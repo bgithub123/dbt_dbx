@@ -32,10 +32,10 @@ jobs:
           pip install dbt-spark[PyHive]
 
       - name: dbt debug
-        run: dbt debug --profiles-dir ci_profiles --profile first_project
+        run: dbt debug --profiles-dir ci_profiles --profile dbt_dbx_iceberg_github
 
       - name: dbt run
-        run: dbt run --profiles-dir ci_profiles --profile first_project
+        run: dbt run --profiles-dir ci_profiles --profile dbt_dbx_iceberg_github
 
       - name: dbt test
-        run: dbt test --profiles-dir ci_profiles --profile first_project
+        run: dbt test --profiles-dir ci_profiles --profile dbt_dbx_iceberg_github
